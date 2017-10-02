@@ -92,9 +92,9 @@ primarily categorical (e.g. the type of device being used) ...
 As a first step toward taking a more flexible approach, we can
 formulate a rule-based system as a linear model:
 
-'''
+```
 P = w_1*f_1 + w_2*f_2 + ...
-'''
+```
 
 where each *w* term is a weight, and each *f* term is a binary feature
 (i.e. if the user is logging in using a new device). The parameter *P*
