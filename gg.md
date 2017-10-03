@@ -66,16 +66,13 @@ in using a new device, or is logging in from a new country, how should
 you handle that situation? What if the user is logging in using a new
 device *and* from a new country? For a completely unsupervised
 approach, we can imagine making common-sense decisions to account for
-each case.
+each case. For instance:
 
 
 
 <p align="center">
   <img src="https://github.com/rquadri/castle/blob/master/tree2.png"/>
 </p>
-
-![](https://github.com/rquadri/castle/blob/master/tree2.png)
-
 
 
 
