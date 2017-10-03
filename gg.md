@@ -25,7 +25,7 @@ Large companies have dedicated security teams that do their best to
 protect their networks and their users. But smaller companies have
 neither the expertise nor the resources to monitor their accounts.
 
-### Castle 
+## Castle 
 
 Castle is a cybersecurity startup that provides account security for
 businesses that operate web or mobile apps. Castle monitors the users
@@ -43,7 +43,7 @@ suspicious turned out to actually have been compromised or not -- be
 used to make account security algorithms smarter over time.
 
 
-### A first step in detecting account compromise
+## A first step in detecting account compromise
 
 Broadly speaking, there are a number of challenges in detecting
 account compromise. One is the needle-in-a-haystack effect: the number
@@ -68,7 +68,7 @@ device *and* from a new country? For a completely unsupervised
 approach, we can imagine making common-sense decisions to account for
 each case.
 
-**** decision slide + caption
+![](https://github.com/rquadri/castle/blob/master/tree.png)
 
 This approach, while a good (and probably necessary) starting point,
 has many limitations. These include:
@@ -102,7 +102,7 @@ has many limitations. These include:
    categorical recommendation.
 
 
-### A simple, flexible model
+## A simple, flexible model
 
 As a first step toward taking a more flexible approach, we can
 formulate a rule-based system as a linear model:
@@ -162,7 +162,7 @@ approaches to calculating P, and for determining the weights, is going
 to require significant (and complete!) feedback data.
 
 
-### What other approaches are there?
+## What other approaches are there?
 
 Of course, we can approach the problem of detecting account compromise
 using a more straightforward mathematical approach. Especially if
