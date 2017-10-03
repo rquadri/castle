@@ -21,13 +21,15 @@ about! Just imagine how many smaller breaches are happening on a daily
 basis that are never publicized, and perhaps are never discovered in
 the first place.
 
-Large companies have dedicated security teams that do their best to
-protect their networks and their users. But smaller companies have
+The largest companies have dedicated security teams that do their best to
+protect their networks and their users. But many other companies have
 neither the expertise nor the resources to monitor their accounts.
+Fortunately, a new cybersecurity startup aims to address this situation.
+
 
 ## Castle 
 
-Castle is a cybersecurity startup that provides account security for
+Castle is a startup that provides account security for
 businesses that operate web or mobile apps. Castle monitors the users
 of those apps, and looks for suspicious activity that may suggest that
 a user's account may have been taken over. If they notice something
@@ -181,10 +183,21 @@ own point of view, this more rigorous mathematical approach is
 appealing and may well lead to better results -- but the large number
 of (at times questionable) assumptions and approximations that need to
 be made in order to put the equation into a useable form mean that
-this approach may not actually be so rigorous.
+this approach may not actually be so rigorous. Fortunately, even this
+approach can be written as a linear model (where the *f_i$ features
+are the log probability; see equation 13 in the above paper).
 
 And how else might we tackle the problem of detecting account
-compromise? The figure at the top of this page brings to mind the
+compromise? There is a large variety of anomaly-detection techniques
+available. Many of these are density-based techniques (e.g. K nearest-
+neighbor), however for the primarily categorical data considered here
+the local density in N-dimensional space becomes less well-defined.
+Moreover, when calculating local densities, how can we best combine
+information from a particular user's own usage patterns with the
+usage patterns of all users? The answer to this question wasn't clear
+to me, so I didn't consider density-based techniques any further.
+
+The figure at the top of this page brings to mind the
 popular machine learning techinque of random forests. However there
 are several reasons that I decided not to pursue this approach. The
 most fundamental is that, Castle may want to assign features and
@@ -201,22 +214,19 @@ illigitimate user actions, and this can be a significant problem while
 training tree-based methods. And you'll start to wonder if a tree is
 the natural method for Castle to pursue!.
 
+### Conclusions
+
 For all of these reasons I decided to stick with a linear model, with
 weights that can be tuned using logistic regression. This model
 provides ease of interpretation and implementation, allows us to tune
 the weights on a per-customer and a per-user basis, and can be easily
-optimized when training data are available.
-
-
-
-
-Ultimately the ideas here need to be tested and refined on data. The
-goal will be to
-
-Binary / categorical data
-Different customers and different users have different patterns.
+optimized when training data are available. How well this model can perform
+can ultimately only be tested on feedback data when they become avaible.
 
 This will lead to a high false-positive rate. That may not be a problem though, and some customers may actually appreciate it. In principle at least this is something that can be tested observationally, or experimentally.
+
+
+
 
 Why choose logistic regression?
 
