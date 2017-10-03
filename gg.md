@@ -70,6 +70,9 @@ each case.
 
 
 
+<p align="center">
+  <img src="https://github.com/rquadri/castle/blob/master/tree2.png"/>
+</p>
 
 ![](https://github.com/rquadri/castle/blob/master/tree2.png)
 
