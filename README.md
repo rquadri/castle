@@ -75,7 +75,7 @@ each case. For instance:
 <p align="center">
   <img src="https://github.com/rquadri/castle/blob/master/tree2.png"/>
 </p>
-<img src="tree2.png" class="img-responsive" alt=""> </div>
+<img src="tree2.png" class="img-responsive" alt="">
 
 ![](https://github.com/rquadri/castle/blob/master/tree2.png)
 
