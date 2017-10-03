@@ -75,10 +75,10 @@ each case. For instance:
 <p align="center">
   <img src="https://github.com/rquadri/castle/blob/master/tree2.png"/>
 </p>
+<img src="tree2.png" class="img-responsive" alt=""> </div>
 
 ![](https://github.com/rquadri/castle/blob/master/tree2.png)
 
-![Title]({{ site.url }}(tree2.png)
 
 This approach, while a good (and probably necessary) starting point,
 has many limitations. These include:
