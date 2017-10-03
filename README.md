@@ -78,6 +78,8 @@ each case. For instance:
 
 ![](https://github.com/rquadri/castle/blob/master/tree2.png)
 
+![Title]({{ site.url }}https://github.com/rquadri/castle/blob/master/tree2.png)
+
 This approach, while a good (and probably necessary) starting point,
 has many limitations. These include:
 
