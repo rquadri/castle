@@ -68,7 +68,7 @@ device *and* from a new country? For a completely unsupervised
 approach, we can imagine making common-sense decisions to account for
 each case.
 
-![](https://github.com/rquadri/castle/blob/master/tree.png | width=100)
+![](https://github.com/rquadri/castle/blob/master/tree2.png | width=100)
 
 This approach, while a good (and probably necessary) starting point,
 has many limitations. These include:
