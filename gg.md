@@ -50,7 +50,7 @@ used to make account security algorithms smarter over time.
 Broadly speaking, there are a number of challenges in detecting
 account compromise. One is the needle-in-a-haystack effect: the number
 of uncompromised accounts will generally be dramatically higher than
-the number of compromiesd accounts, and users may interact with their
+the number of compromised accounts, and users may interact with their
 online accounts in a wide variety of perfectly legitimate ways. A
 second difficulty has to do with the lack of feedback data. For young
 companies the range of legitimate user behavioral patterns will not be
@@ -83,7 +83,7 @@ has many limitations. These include:
 
  * Since this type of rule-based system would (at least initially) be
    set up by hand, it is difficult to imagine how to optimize it in an
-   algorithmic way once feedback data become avaible.
+   algorithmic way once feedback data become available.
 
  * It is not flexible -- related to the previous point, this type of
    system is not very flexible or generalizable. Castle, which has
@@ -92,7 +92,7 @@ has many limitations. These include:
    may be highly localized -- it's important to have a model that can
    be applied and optimized in a more general way.
 
- * Itnly works for categorical variables. Although most of the types
+ * It only works for categorical variables. Although most of the types
    of information that Castle deals with are categorical (e.g. type of
    device used), in principle there may be continuous features that
    can also be taken into account(e.g. the geographical distance
@@ -128,7 +128,7 @@ than *X*. The features, weights, and threshold values can be chosen to
 closely mimic, or even possibly to exactly reproduce, the rules-based
 system described above.
 
-This formulation has the signficant advantage of being very flexible;
+This formulation has the significant advantage of being very flexible;
 new features can be added at will, and the weight associated with each
 feature can be optimized based on feedback data. The weights can be
 further tuned for each of Castle's customers, and can easily and
@@ -177,7 +177,7 @@ using a more straightforward mathematical approach. Especially if
 you'd like to do things like take into a account a user's history or
 incorporate information drawn from a variety of sources, this starts
 to look like a traditional problem for classical statistics and
-Bayes' theorem. Such an approach is descrobed here:
+Bayes' theorem. Such an approach is described here:
 http://theory.stanford.edu/~dfreeman/papers/ato-model.pdf.  From my
 own point of view, this more rigorous mathematical approach is
 appealing and may well lead to better results -- but the large number
@@ -198,7 +198,7 @@ usage patterns of all users? The answer to this question wasn't clear
 to me, so I didn't consider density-based techniques any further.
 
 The figure at the top of this page brings to mind the
-popular machine learning techinque of random forests. However there
+popular machine learning technique of random forests. However there
 are several reasons that I decided not to pursue this approach. The
 most fundamental is that, Castle may want to assign features and
 weights both on a per-customer basis *and* on a per user basis. Random
@@ -210,7 +210,7 @@ have a feature for a user suddenly logging in from a new country, but
 then sub-features for 190-some countries in the world. So it might
 become a very wide and a very deep tree, very fast. Finally, we have a
 very unbalanced dataset, with many more legitimate user actions than
-illigitimate user actions, and this can be a significant problem while
+illegitimate user actions, and this can be a significant problem while
 training tree-based methods. And you'll start to wonder if a tree is
 the natural method for Castle to pursue!.
 
@@ -223,7 +223,7 @@ the weights on a per-customer and a per-user basis, and can be easily
 optimized when training data are available. Of course, evaluating any
 model -- including identifying the more important features and
 tuning to find optimal performance -- can ultimately only be tested on feedback
-data when they become avaible. 
+data when they become available. 
 
 I've described here some of the issues that I've been investigating
 these last couple weeks of working with Castle, and why I chose to
