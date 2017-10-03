@@ -117,12 +117,12 @@ formulate a rule-based system as a linear model:
 P = w_1*f_1 + w_2*f_2 + ...
 ```
 
-where each *w* is a weight, and each *f* is a binary feature
+where each *w_i* is a weight, and each *f_i* is a binary feature
 (i.e. whether the user is logging in using a new device or not). The
 parameter *P* can be interpreted as an attack score, and thresholds
-can be set, i.e. an user account should be frozen if P is greater than
-some value X, and should be challenged if P is greater than Y but less
-than X. The features, weights, and threshold values can be chosen to
+can be set, e.g. an user account should be frozen if *P* is greater than
+some value *X*, and should be challenged if *P* is greater than *Y* but less
+than *X*. The features, weights, and threshold values can be chosen to
 closely mimic, or even possibly to exactly reproduce, the rules-based
 system described above.
 
@@ -132,9 +132,9 @@ feature can be optimized based on feedback data. The weights can be
 further tuned for each of Castle's customers, and can easily and
 quickly adjusted for individual users. Moreover, if the weights are
 suitably chosen, the parameter P can even be interpreted as an
-approximate probability of attack.
+approximate probability of account compromise.
 
-So how can the w parameters be optimized once feedback data are
+So how can the *w_i* parameters be optimized once feedback data are
 available? The obvious answer is logistic regression. The parameter P
 can be set to either 0 or 1 for legitimate user actions and actions by
 compromised users, respectively.
@@ -144,8 +144,8 @@ seems ad-hoc, which is true! But there is at least some mathematical
 justification. To see this, imagine that that there are several
 features that are associated with an increased probability that an
 account has been taken over; let's refer to these probabilities as
-P_1, P_2, etc. If these features are independent of each other,
-i.e. there are no interaction terms, the summed probability can be
+*P_1*, *P_2*, etc. If these features are independent of each other,
+i.e. there are no interaction terms, then the summed probability can be
 written
 
 
@@ -154,12 +154,12 @@ P = 1-(1-P_1)*(1-P_2)*(1-P_3)*...
 ```
 
 Expanding out this equation, and dropping all of the higher-order
-terms (since we expect that each P_x<<1), we recover the linear model
+terms (since we expect that each *P_i<<1*), we recover the linear model
 shown earlier. But it remains true that the linear model is not
 strictly speaking consistent with assumptions that go into a logistic
 regression, even though that is what we used one to estimate the
 weights. It would be more self-consistent to just use the logistic
-equation to calculate P, however there may be other features that we'd
+equation to calculate *P*, however there may be other features that we'd
 like to take into account that would still need to be added linearly
 (for instance, a penalization for a login from a location near a Tor
 node or from a country that is the source for many hacking
