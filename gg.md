@@ -220,26 +220,13 @@ For all of these reasons I decided to stick with a linear model, with
 weights that can be tuned using logistic regression. This model
 provides ease of interpretation and implementation, allows us to tune
 the weights on a per-customer and a per-user basis, and can be easily
-optimized when training data are available. How well this model can perform
-can ultimately only be tested on feedback data when they become avaible.
-
-This will lead to a high false-positive rate. That may not be a problem though, and some customers may actually appreciate it. In principle at least this is something that can be tested observationally, or experimentally.
-
-
-
-
-Why choose logistic regression?
-
-
-Once even a fairly small amount of data are available on user behavior
-patterns, it is possible to use standard outlier detection techniques
--- for instance using XX. But the data considered by Castle is
-primarily categorical (e.g. the type of device being used) ...
-
+optimized when training data are available. Of course, evaluating any
+model -- including identifying the more important features and
+tuning to find optimal performance -- can ultimately only be tested on feedback
+data when they become avaible. 
 
 I've described here some of the issues that I've been investigating
 these last couple weeks of working with Castle, and why I chose to
-proceed with the method that I did. I've really enjoyed
-
-and I'd like to thank Castle, and the CTO Sebastian Wallin in
-particular, for the 
+proceed with the method that I did. I've really enjoyed this work,
+and would like to thank Castle, and the CTO Sebastian Wallin in
+particular, for the opportunity to be involved.
