@@ -2,10 +2,10 @@ Remembering passwords, dealing with two-factor authentication,
 answering security questions, having our credit cards frozen... in one
 way or another, we've all become familiar with how cybersecurity
 issues affect our daily lives. It is not an exaggeration to say that
-our digital accounts are under constant attack. There have been the
+our digital accounts are under constant attack. There have been several
 well-publicized large security breaches, notably including the recent
 Equifax breach (estimated 143 million social security numbers stolen),
-the two large security breaches at Yahoo (totaling approximately 1.5
+the two large security breaches at Yahoo (3
 billion accounts compromised, potentially revealing passwords and
 answers to security questions). On a much smaller scale, but perhaps
 no less significant, the hacks of the Democratic National Committee
@@ -21,7 +21,7 @@ about! Just imagine how many smaller breaches are happening on a daily
 basis that are never publicized, and perhaps are never discovered in
 the first place.
 
-The largest companies have dedicated security teams that do their best to
+Large companies often have dedicated security teams that do their best to
 protect their networks and their users. But many other companies have
 neither the expertise nor the resources to monitor their accounts.
 Fortunately, a new cybersecurity startup aims to address this situation.
@@ -57,17 +57,17 @@ companies the range of legitimate user behavioral patterns will not be
 known, so this becomes an unsupervised classification problem. Over
 time, of course, a company can build up feedback that can be used to
 train a model -- Castle itself is a recent startup and is still very
-much in the phase of learning about user behavior, and in gathering
+much in the phase of learning user behavior, and in gathering
 sufficient feedback data.
 
 What are the possible ways to detect compromised user accounts in an
 unsupervised fashion? A straightforward, common-sense approach would
 be to apply a set of rules and heuristics to whatever features of user
-activity are being logged. For instance, if a user is suddenly logging
+activity are being logged. For instance, if a user appears to be suddenly logging
 in using a new device, or is logging in from a new country, how should
 you handle that situation? What if the user is logging in using a new
 device *and* from a new country? For a completely unsupervised
-approach, we can imagine making common-sense decisions to account for
+approach, we can imagine making common-sense decisions in
 each case. For instance:
 
 
@@ -84,23 +84,23 @@ has many limitations. These include:
    algorithmic way once feedback data become available.
 
  * It is not flexible -- related to the previous point, this type of
-   system is not very flexible or generalizable. Castle, which has
+   system is not very flexible or generalizable. Castle has
    multiple customers with differing user bases -- for instance, some
    customers may have users spread throughout the world whereas others
-   may be highly localized -- it's important to have a model that can
+   may be highly localized. Thus it is important to have a model that can
    be applied and optimized in a more general way.
 
  * It only works for categorical variables. Although most of the types
    of information that Castle deals with are categorical (e.g. type of
    device used), in principle there may be continuous features that
-   can also be taken into account(e.g. the geographical distance
+   can also be taken into account (e.g. the geographical distance
    between login events).
 
  * Prior information -- in some cases larger patterns may appear, for
    instance that many accounts are being attacked from a certain
    geographical location, or that a particular user is likely to log
-   in from widely varying locations. We would like to take this
-   information into account, but it isn't obvious how to do this in a
+   in from widely varying locations. We would like to make use of this
+   information, but it isn't obvious how to do so in a
    rule-based system.
 
  * Ideally we could assign reliable probability estimates of account
@@ -118,7 +118,7 @@ P = w_1*f_1 + w_2*f_2 + ...
 ```
 
 where each *w_i* is a weight, and each *f_i* is a binary feature
-(i.e. whether the user is logging in using a new device or not). The
+(e.g. whether the user is logging in using a new device or not). The
 parameter *P* can be interpreted as an attack score, and thresholds
 can be set, e.g. an user account should be frozen if *P* is greater than
 some value *X*, and should be challenged if *P* is greater than *Y* but less
@@ -165,7 +165,7 @@ like to take into account that would still need to be added linearly
 node or from a country that is the source for many hacking
 attacks). Of course, evaluating the effectiveness of different
 approaches to calculating P, and for determining the weights, is going
-to require significant (and complete!) feedback data.
+to require significant feedback data.
 
 
 ## What other approaches are there?
@@ -182,7 +182,7 @@ appealing and may well lead to better results -- but the large number
 of (at times questionable) assumptions and approximations that need to
 be made in order to put the equation into a useable form mean that
 this approach may not actually be so rigorous. Fortunately, even this
-approach can be written as a linear model (where the *f_i$ features
+approach can be written as a linear model (where the *f_i* features
 are the log probability; see equation 13 in the above paper).
 
 And how else might we tackle the problem of detecting account
@@ -195,22 +195,22 @@ information from a particular user's own usage patterns with the
 usage patterns of all users? The answer to this question wasn't clear
 to me, so I didn't consider density-based techniques any further.
 
-The figure at the top of this page brings to mind the
-popular machine learning technique of random forests. However there
+Yet another approach is brought to mind by the figure at the top of this page:
+the popular machine learning technique of random forests. However there
 are several reasons that I decided not to pursue this approach. The
 most fundamental is that, Castle may want to assign features and
 weights both on a per-customer basis *and* on a per user basis. Random
 forests don't provide a natural means of doing this, and even if there
 were, we can't be continually training, and storing, and re-training a
-large tree for millions of users individually. Additionally some of
+large tree ensemble for millions of users individually. Additionally some of
 those features may have many possible values -- for instance you can
 have a feature for a user suddenly logging in from a new country, but
 then sub-features for 190-some countries in the world. So it might
-become a very wide and a very deep tree, very fast. Finally, we have a
-very unbalanced dataset, with many more legitimate user actions than
+become a very wide and a very deep tree, very fast. Finally, we have an
+extremely unbalanced dataset, with many more legitimate user actions than
 illegitimate user actions, and this can be a significant problem while
 training tree-based methods. And you'll start to wonder if a tree is
-the natural method for Castle to pursue!.
+the natural method for Castle to pursue.
 
 ### Conclusions
 
