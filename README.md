@@ -130,7 +130,7 @@ This formulation has the significant advantage of being very flexible;
 new features can be added at will, and the weight associated with each
 feature can be optimized based on feedback data. The weights can be
 further tuned for each of Castle's customers, and can easily and
-quickly adjusted for individual users. Moreover, if the weights are
+quickly be adjusted for individual users. Moreover, if the weights are
 suitably chosen, the parameter P can even be interpreted as an
 approximate probability of account compromise.
 
