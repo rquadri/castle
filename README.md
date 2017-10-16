@@ -157,7 +157,7 @@ Expanding out this equation, and dropping all of the higher-order
 terms (since we expect that each *P_i<<1*), we recover the linear model
 shown earlier. But it remains true that the linear model is not
 strictly speaking consistent with assumptions that go into a logistic
-regression, even though that is what we used one to estimate the
+regression, even though that is what we used to estimate the
 weights. It would be more self-consistent to just use the logistic
 equation to calculate *P*, however there may be other features that we'd
 like to take into account that would still need to be added linearly
@@ -218,7 +218,7 @@ For all of these reasons I decided to stick with a linear model, with
 weights that can be tuned using logistic regression. This model
 provides ease of interpretation and implementation, allows us to tune
 the weights on a per-customer and a per-user basis, and can be easily
-optimized when training data are available. Of course, evaluating any
+optimized using training data. Of course, evaluating any
 model -- including identifying the more important features and
 tuning to find optimal performance -- can ultimately only be tested on feedback
 data when they become available. 
