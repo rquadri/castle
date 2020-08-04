@@ -7,10 +7,10 @@ well-publicized large security breaches, notably including the recent
 Equifax breach (estimated 143 million social security numbers stolen),
 the two large security breaches at Yahoo (3
 billion accounts compromised, potentially revealing passwords and
-answers to security questions). On a much smaller scale, but perhaps
-no less significant, the hacks of the Democratic National Committee
-servers and of top Democratic officials' emails may have swayed the
-2016 presidential election.
+answers to security questions). On a much smaller scale, but no less
+significant, the hacks of the Democratic National Committee servers
+and of top Democratic officials' emails may have swayed the 2016
+presidential election.
 
 We cannot assume that our personal information is safe. Whether you
 realize it or not, it is quite likely that your own sensitive
@@ -104,7 +104,7 @@ has many limitations. These include:
    rule-based system.
 
  * Ideally we could assign reliable probability estimates of account
-   compromise after ever user action, but this system only provides a
+   compromise after every user action, but this system only provides a
    categorical recommendation.
 
 
